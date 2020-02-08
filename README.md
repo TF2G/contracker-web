@@ -15,3 +15,6 @@ Web frontend for TF2G+ ConTracker. Uses the [contracker-api](https://github.com/
 - Configure `.env`
 
 - `php artisan migrate`
+
+- Serve with Apache 2 to take advantage of `.htaccess` files. Regardless of what web server you use, only the `public` directory should be public; make a symlink to there in your document root if needed.
+

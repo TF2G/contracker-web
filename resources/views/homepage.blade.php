@@ -8,7 +8,6 @@
         <p><a href="{{ route('contracts') }}">View contracts</a></p>
     @endauth
     @guest
-        <p><a href="/auth/steam/handle"><img alt="Sign in through Steam" src="{{ asset('images/sits_small.png') }}"></a></p>
         <p>This page is under construction&hellip;</p>
         <p>For updates, join the <a href="https://discordapp.com/invite/yVgVdQv">Discord server</a>.</p>
     @endguest

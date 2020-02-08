@@ -93,9 +93,16 @@
             overflow: hidden;
             white-space: nowrap;
         }
-        p.contracker__signout {
+        .contracker__header_right {
+            float: right;
             position: relative;
-            left: 560px;
+            right: 15px;
+        }
+        a.contracker__header_right {
+            top: 15px;
+        }
+        .contracker__header_right > p {
+            margin-bottom: 0;
         }
     </style>
 </head>
@@ -105,11 +112,16 @@
             <div class="contracker__header">
                 <a href="/" id="contracker__back"></a>
                 @auth
-                    <form action="{{ route('logout') }}" method="post">
+                    <form class="contracker__header_right" action="{{ route('logout') }}" method="post">
                         @csrf
                         <p class="contracker__signout"><button type="submit">sign out</button></p>
                     </form>
                 @endauth
+                @guest
+                    <a class="contracker__header_right" href="{{ route('auth.steam.handle') }}">
+                        <img alt="Sign in through Steam" src="{{ asset('images/sits_small.png') }}">
+                    </a>
+                @endguest
                 @yield('contracker.header')
             </div>
             <div class="contracker__text">
