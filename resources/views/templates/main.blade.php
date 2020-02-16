@@ -42,7 +42,7 @@
             margin: 0 90px 50px 130px;
             width: 580px;
             height: 280px;
-            overflow: scroll;
+            overflow: hidden;
             word-break: break-word;
         }
         div.contracker__text a {
@@ -98,11 +98,8 @@
             position: relative;
             right: 15px;
         }
-        a.contracker__header_right {
+        .contracker__header_right {
             top: 15px;
-        }
-        .contracker__header_right > p {
-            margin-bottom: 0;
         }
     </style>
 </head>
@@ -114,7 +111,9 @@
                 @auth
                     <form class="contracker__header_right" action="{{ route('logout') }}" method="post">
                         @csrf
-                        <p class="contracker__signout"><button type="submit">sign out</button></p>
+                        <div class="contracker__signout">
+                            <button type="submit">sign out</button>
+                        </div>
                     </form>
                 @endauth
                 @guest
